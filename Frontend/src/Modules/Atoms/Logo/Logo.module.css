@@ -1,0 +1,13 @@
+.logo {
+    color: #ffffff;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    text-shadow: 0 0 2px #ffffff;
+}
+.logo:hover {
+    color: #c4c4c4;
+    text-shadow: 0 0 3px whitesmoke;
+}

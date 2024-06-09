@@ -1,0 +1,8 @@
+.container{
+    display: grid;
+    width: 80%;
+    margin-left: 20%;
+    grid-template-columns: 1fr 0.3fr;
+    align-items: center;
+    margin-top: 10px;
+}

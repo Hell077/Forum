@@ -1,0 +1,23 @@
+.userIcon {
+    display: flex;
+    align-items: center;
+}
+
+.navButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.navButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.icon {
+    font-size: 1.75rem;
+    color: #ffffff;
+}
