@@ -7,9 +7,9 @@ function LoginForm(){
     return(
         <>
             <form className={style.container}>
-                <input type="text"/>
-                <input type="password"/>
-                <button>SetNewLogin</button>
+                <input type="text" placeholder={"Login"}/>
+                <input type="password" placeholder={"Password"}/>
+                <button>Login</button>
             </form>
         </>
     );
