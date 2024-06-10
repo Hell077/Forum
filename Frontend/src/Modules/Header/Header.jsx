@@ -3,16 +3,17 @@ import style from './header.module.css';
 import ProfileNav from '../Atoms/ProfileButton/ProfileBtn.jsx';
 import Logo from "../Atoms/Logo/Logo.jsx";
 import {useState} from "react";
-
+import {useSelector} from "react-redux";
 
 function Header() {
-
+    const login = useSelector(state => state.login.login);
 
     return (
         <header className={style.header}>
             <div className={style.container}>
                 <Logo/>
-                <ProfileNav />
+                <h3>CurrentLogin is :{}</h3>
+                <ProfileNav/>
 
             </div>
         </header>
