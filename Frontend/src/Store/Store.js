@@ -17,9 +17,8 @@ const saveState = (state) => {
     try {
         const serializedState = JSON.stringify(state);
         localStorage.setItem('state', serializedState);
-    }
-    catch {
-        //null
+    } catch {
+        // Пустой catch блок, чтобы игнорировать ошибки
     }
 };
 
@@ -29,7 +28,9 @@ const store = configureStore({
     reducer: {
         login: loginReducer,
     },
-    preloadedState: persistedState,
+    preloadedState: persistedState || {
+        login: { login: '' } // Устанавливаем начальное состояние пустым
+    }
 });
 
 store.subscribe(() => {
