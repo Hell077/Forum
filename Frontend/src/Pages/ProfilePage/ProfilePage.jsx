@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from "../../Modules/Header/Header.jsx";
 import { useDispatch, useSelector } from "react-redux";
-import { setLogin } from "../../Store/loginSlice.js"; // Убедитесь, что путь правильный
+import { setLogin } from "../../Store/loginSlice.js";
+import LoginForm from "../../Modules/Atoms/loginForm/loginForm.jsx";
 
 function ProfilePage() {
     const dispatch = useDispatch();
@@ -14,15 +15,13 @@ function ProfilePage() {
         return (
             <>
                 <Header/>
-                <input type="text"/>
-                <input type="password"/>
-                <button onClick={handleSetLogin}>SetNewLogin</button>
+                <LoginForm/>
             </>
         )
     } else {
         return (
             <>
-                <Header />
+                <Header/>
                 <h1>{login}</h1>
                 <button onClick={handleSetLogin}>SetNewLogin</button>
             </>
