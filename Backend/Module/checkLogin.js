@@ -32,7 +32,7 @@ router.post('/register', async (req, res) => {
     }
 
     try {
-        const db = getDB();
+        const db = getDB();  // Ensure getDB() is defined and correctly connects to your database
         const existingUser = await db.collection('Users').findOne({ login });
 
         if (existingUser) {

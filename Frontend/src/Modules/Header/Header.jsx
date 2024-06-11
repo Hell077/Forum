@@ -4,20 +4,36 @@ import ProfileNav from '../Atoms/ProfileButton/ProfileBtn.jsx';
 import Logo from "../Atoms/Logo/Logo.jsx";
 import {useState} from "react";
 import {useSelector} from "react-redux";
+import {Link} from "react-router-dom";
 
 function Header() {
     const login = useSelector(state => state.login.login);
 
-    return (
-        <header className={style.header}>
-            <div className={style.container}>
-                <Logo/>
-                <h3>CurrentLogin is :{}</h3>
-                <ProfileNav/>
+    if (login === null || login === undefined || login === ''){
+        return (
+            <header className={style.header}>
+                <div className={style.container}>
+                    <Logo/>
+                    <Link to="/profile">
+                        <h3>Войдите в аккаунт</h3>
+                    </Link>
+                </div>
+            </header>
+        )
+    }
+    else{
+        return (
+            <header className={style.header}>
+                <div className={style.container}>
+                    <Logo/>
+                    <h3> Ваш логин {login}</h3>
+                    <ProfileNav/>
+                </div>
+            </header>
+        );
+    }
 
-            </div>
-        </header>
-    );
+
 }
 
 export default Header;

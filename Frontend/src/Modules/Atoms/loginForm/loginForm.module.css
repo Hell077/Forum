@@ -6,7 +6,6 @@
     grid-gap: 20px;
     align-items: center;
     margin: 0 auto;
-    margin-top: 30vh;
     border-radius: 10px;
     border: 1px solid whitesmoke;
     padding: 40px 10px 40px 10px;
@@ -23,16 +22,31 @@
             background-color: #c4c4c4;
         }
     }
-    button{
-        border: 1px solid whitesmoke;
-        outline: none;
-        border-radius: 10px;
-        padding: 10px ;
-        font-size: 20px;
-        color:black;
-        background-color: whitesmoke;
-        &:hover{
-            background-color: #c4c4c4;
-        }
+
+}
+
+button{
+    border: 1px solid whitesmoke;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px ;
+    font-size: 20px;
+    color:black;
+    background-color: whitesmoke;
+    &:hover{
+        background-color: #c4c4c4;
     }
 }
+
+.cont{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 50px;
+    margin-top: 150px;
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid whitesmoke;
+    padding: 20px 10px 20px 10px;
+}
+

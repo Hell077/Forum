@@ -23,7 +23,7 @@ function ProfilePage() {
             <>
                 <Header/>
                 <h1>{login}</h1>
-                <button onClick={handleSetLogin}>SetNewLogin</button>
+                <button onClick={handleSetLogin}>Выйти</button>
             </>
         );
     }
