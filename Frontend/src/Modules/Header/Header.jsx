@@ -26,8 +26,9 @@ function Header() {
             <header className={style.header}>
                 <div className={style.container}>
                     <Logo/>
-                    <h3> Ваш логин {login}</h3>
-                    <ProfileNav/>
+                    <Link to="/profile">
+                        <h3>{login}</h3>
+                    </Link>
                 </div>
             </header>
         );

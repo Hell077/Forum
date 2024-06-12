@@ -16,6 +16,12 @@
     align-items: center;
 }
 
+a{
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: none;
+}
 
 .userIcon {
     display: flex;
