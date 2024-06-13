@@ -1,0 +1,43 @@
+/* PostDetail.module.css */
+.PostDetail {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.PostDetail h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.PostDetail p {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+.Photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.Photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Photo img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.Photo p {
+    text-align: center;
+}

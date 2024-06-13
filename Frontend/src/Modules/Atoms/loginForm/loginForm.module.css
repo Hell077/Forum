@@ -25,6 +25,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     flex: 1;
+    font-size: 1.2rem;
 }
 
 .switch button.active {
@@ -51,6 +52,7 @@ form{
 }
 
 .input {
+    font-size: 1.2rem;
     width: 250px;
     padding: 10px;
     margin-bottom: 10px;
@@ -74,6 +76,7 @@ form{
     border-radius: 5px;
     transition: background-color 0.3s ease;
     width: 100%;
+    font-size: 1.2rem;
 }
 
 .submitButton:hover {

@@ -25,9 +25,10 @@ function LoginForm() {
                 password: password,
             });
 
-            if (response.status === 200) {
+            if (response.status >= 200 && response.status < 300 ) {
                 toast.success('Успешная авторизация');
                 dispatch(setLogin(loginInput));
+
             } else {
                 toast.error('Неверный логин или пароль');
             }
@@ -68,44 +69,47 @@ function LoginForm() {
     };
 
     return (
-        <div className={style.cont}>
-            <div className={style.container}>
-                <div className={style.switch}>
-                    <button
-                        className={selected === 'login' ? style.active : ''}
-                        onClick={() => setSelected('login')}
-                    >
-                        Login
-                    </button>
-                    <button
-                        className={selected === 'register' ? style.active : ''}
-                        onClick={() => setSelected('register')}
-                    >
-                        Register
-                    </button>
-                </div>
-                <form onSubmit={selected === 'login' ? handleLogin : handleRegister}>
-                    <input
-                        type="text"
-                        placeholder="Login"
-                        value={loginInput}
-                        onChange={(e) => setLoginInput(e.target.value)}
-                        className={style.input}
-                    />
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        className={style.input}
-                    />
-                    <button type="submit" className={style.submitButton}>
-                        {selected === 'login' ? 'Login' : 'Register'}
-                    </button>
-                </form>
-            </div>
+        <>
             <ToastContainer />
-        </div>
+            <div className={style.cont}>
+                <div className={style.container}>
+                    <div className={style.switch}>
+                        <button
+                            className={selected === 'login' ? style.active : ''}
+                            onClick={() => setSelected('login')}
+                        >
+                            Login
+                        </button>
+                        <button
+                            className={selected === 'register' ? style.active : ''}
+                            onClick={() => setSelected('register')}
+                        >
+                            Register
+                        </button>
+                    </div>
+                    <form onSubmit={selected === 'login' ? handleLogin : handleRegister}>
+                        <input
+                            type="text"
+                            placeholder="Login"
+                            value={loginInput}
+                            onChange={(e) => setLoginInput(e.target.value)}
+                            className={style.input}
+                        />
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            className={style.input}
+                        />
+                        <button type="submit" className={style.submitButton}>
+                            {selected === 'login' ? 'Login' : 'Register'}
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </>
     );
 }
 
