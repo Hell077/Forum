@@ -29,7 +29,7 @@ const store = configureStore({
         login: loginReducer,
     },
     preloadedState: persistedState || {
-        login: { login: '' } // Устанавливаем начальное состояние пустым
+        login: { login: '' }
     }
 });
 

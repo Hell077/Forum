@@ -12,7 +12,7 @@ async function connectDB() {
         db = client.db('postDB');
     } catch (error) {
         console.error('Ошибка при подключении к базе данных:', error);
-        throw error; // Остановка сервера при ошибке подключения к БД
+        throw error;
     }
 }
 

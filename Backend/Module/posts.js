@@ -15,6 +15,19 @@ router.get('/posts', async (req, res) => {
     }
 });
 
+router.get('/posts/user/:username', async (req, res) => {
+    try {
+        const db = getDB();
+        const { username } = req.params;
+
+        const userPosts = await db.collection('Posts').find({ 'author.name': username }).toArray();
+        res.status(200).send(userPosts);
+    } catch (error) {
+        console.error('Ошибка при получении постов пользователя:', error);
+        res.status(500).send({ error: 'Внутренняя ошибка сервера' });
+    }
+});
+
 router.get('/posts/:id', async (req, res) => {
     try {
         const db = getDB();
@@ -34,4 +47,39 @@ router.get('/posts/:id', async (req, res) => {
     }
 });
 
+router.post('/posts/add', async (req, res) => {
+    try {
+        const db = getDB();
+        const { title, content, created_at, author, tags, photos } = req.body;
+
+        const newPost = {
+            _id: new ObjectId(),
+            title,
+            content,
+            created_at: new Date(created_at),
+            author: {
+                id: new ObjectId(author.id),
+                name: author.name,
+            },
+            tags,
+            photos: [], // Создаем пустой массив для фотографий
+        };
+
+        // Проверяем наличие фотографий и добавляем их в новый пост, если они есть
+        if (photos && photos.length > 0) {
+            newPost.photos = photos.map(photo => ({
+                photo_id: new ObjectId(),
+                url: photo.url,
+                description: photo.description,
+                uploaded_at: new Date(photo.uploaded_at),
+            }));
+        }
+
+        const result = await db.collection('Posts').insertOne(newPost);
+        res.status(201).json();
+    } catch (error) {
+        console.error('Error creating post:', error);
+        res.status(500).json({ error: 'An error occurred while creating the post.' });
+    }
+});
 export default router;

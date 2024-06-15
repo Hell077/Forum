@@ -14,7 +14,7 @@ router.post('/login', async (req, res) => {
         const user = await db.collection('Users').findOne({ login, password });
 
         if (user) {
-            res.status(200).send({ message: 'Успешная авторизация', user });
+            res.status(200).send({ message: 'Успешная авторизация', userId: user._id }); // Отправляем id пользователя
         } else {
             res.status(401).send({ error: 'Неверные логин или пароль' });
         }
@@ -24,6 +24,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
+
 router.post('/register', async (req, res) => {
     const { login, password } = req.body;
 
@@ -32,21 +33,25 @@ router.post('/register', async (req, res) => {
     }
 
     try {
-        const db = getDB();  // Ensure getDB() is defined and correctly connects to your database
+        const db = getDB();
         const existingUser = await db.collection('Users').findOne({ login });
 
         if (existingUser) {
             return res.status(409).send({ error: 'Логин уже используется' });
         }
 
-        const newUser = { login, password };
-        await db.collection('Users').insertOne(newUser);
-        res.status(201).send({ message: 'Пользователь успешно зарегистрирован' });
+        // Создаем нового пользователя с полем authorId
+        const newUser = { login, password, authorId: null }; // Инициализируем authorId значением null
+        const result = await db.collection('Users').insertOne(newUser);
+
+        // Отправляем ответ с сообщением и id нового пользователя
+        res.status(201).send({ message: 'Пользователь успешно зарегистрирован', userId: result.insertedId });
     } catch (error) {
         console.error('Ошибка при обработке запроса:', error);
         res.status(500).send({ error: 'Внутренняя ошибка сервера' });
     }
 });
+
 
 
 router.get('/users', async (req, res) => {
