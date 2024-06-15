@@ -8,7 +8,6 @@ import {Link} from "react-router-dom";
 
 function Header() {
     const login = useSelector(state => state.login.login);
-    const id = useSelector(state => state.login.authorId);
 
     if (login === null || login === undefined || login === ''){
         return (
@@ -29,7 +28,6 @@ function Header() {
                     <Logo/>
                     <Link to="/profile">
                         <h3>{login}</h3>
-                        <h3>{id}</h3>
                     </Link>
                 </div>
             </header>
