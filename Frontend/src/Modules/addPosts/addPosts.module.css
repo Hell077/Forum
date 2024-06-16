@@ -50,4 +50,84 @@
 }
 
 
+@media screen and (max-width: 320px){
+    .textarea {
+        width: 80%;
+    }
+    .title{
+        width: 80%;
+    }
+}
 
+
+@media screen and (max-width: 375px){
+    .sections{
+        display:grid;
+        width: 85%;
+        margin: 20px auto;
+        grid-template-columns: 1fr;
+        grid-template-rows:1fr;
+        grid-gap: 40px;
+        border: 1px solid whitesmoke;
+        border-radius: 30px;
+        padding: 20px;
+        min-height: 600px;
+        height: auto;
+        max-height: 700px;
+    }
+
+    .textarea {
+        width: 90%;
+    }
+    .title{
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 425px){
+    .sections{
+        display:grid;
+        width: 85%;
+        margin: 20px auto;
+        grid-template-columns: 1fr;
+        grid-template-rows:1fr;
+        grid-gap: 40px;
+        border: 1px solid whitesmoke;
+        border-radius: 30px;
+        padding: 20px;
+        min-height: 600px;
+        height: auto;
+        max-height: 700px;
+    }
+
+    .textarea {
+        width: 90%;
+    }
+    .title{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 768px){
+    .sections{
+        display:grid;
+        width: 85%;
+        margin: 20px auto;
+        grid-template-columns: 1fr;
+        grid-template-rows:1fr;
+        grid-gap: 40px;
+        border: 1px solid whitesmoke;
+        border-radius: 30px;
+        padding: 20px;
+        min-height: 600px;
+        height: auto;
+        max-height: 700px;
+    }
+
+    .textarea {
+        width: 95%;
+    }
+    .title{
+        width: 80%;
+    }
+}
