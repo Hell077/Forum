@@ -22,24 +22,26 @@ function PostDetail() {
         return <div>Загрузка...</div>;
     }
 
-    return (<>
+    return (
+        <>
             <Header/>
             <div className={style.PostDetail}>
                 <h1>{post.title}</h1>
-                <p>{post.content}</p>
-                <p>Автор: {post.author.name}</p>
-                <p>Дата создания: {new Date(post.created_at).toLocaleDateString()}</p>
+                <div dangerouslySetInnerHTML={{__html: post.content}}/>
+                <p>Картинки к посту: </p>
                 <div className={style.Photos}>
+
                     {post.photos.map(photo => (
                         <div key={photo.photo_id} className={style.Photo}>
-                            <img src={photo.url} alt={photo.description} />
+                            <img src={photo.url} alt={photo.description}/>
                             <p>{photo.description}</p>
                         </div>
                     ))}
                 </div>
+                <p>Автор: {post.author.name}</p>
+                <p>Дата создания: {new Date(post.created_at).toLocaleDateString()}</p>
             </div>
         </>
-
     );
 }
 

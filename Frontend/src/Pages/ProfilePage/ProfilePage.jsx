@@ -6,6 +6,7 @@ import LoginForm from "../../Modules/Atoms/loginForm/loginForm.jsx";
 import { ToastContainer } from "react-toastify";
 import MyPosts from "../../Modules/MyPosts/MyPosts.jsx";
 import AddPosts from "../../Modules/addPosts/addPosts.jsx";
+import style from './profile.module.css'
 
 const MemoizedHeader = React.memo(Header);
 const MemoizedToastContainer = React.memo(ToastContainer);
@@ -30,15 +31,15 @@ function ProfilePage() {
     } else {
         return (
             <>
-                <MemoizedToastContainer />
-                <MemoizedHeader />
-                <div>
-                    <button onClick={() => setCurrent('addPosts')}>Add Posts</button>
-                    <button onClick={() => setCurrent('myPosts')}>My Posts</button>
+                <MemoizedToastContainer/>
+                <MemoizedHeader/>
+                <div className={style.switchBtnContainer}>
+                    <button onClick={() => setCurrent('addPosts')} className={style.switchBtn}>Add Posts</button>
+                    <button onClick={() => setCurrent('myPosts')} className={style.switchBtn}>My Posts</button>
+                    <button onClick={handleSetLogin} className={style.Leave}>Выйти</button>
                 </div>
-                {current === 'addPosts' ? <AddPosts key="addPosts" /> : <MyPosts key="myPosts" />}
-                <h1>{login}</h1>
-                <button onClick={handleSetLogin}>Выйти</button>
+                {current === 'addPosts' ? <AddPosts key="addPosts"/> : <MyPosts key="myPosts"/>}
+
             </>
         );
     }

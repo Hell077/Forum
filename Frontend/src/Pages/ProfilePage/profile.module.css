@@ -1,0 +1,45 @@
+.switchBtn {
+    background-color: whitesmoke;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 120px;
+
+}
+
+.switchBtn:hover {
+    background-color: #5d7e2e;
+    color: #000;
+    border: 1px solid black;
+}
+
+.Leave{
+    background-color: #f0f0f0;
+    color: #000;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 120px;
+    &:hover{
+        background-color: indianred;
+        color: whitesmoke;
+        border:1px solid #912e2e;
+    }
+}
+
+
+.switchBtnContainer {
+    gap: 5px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}

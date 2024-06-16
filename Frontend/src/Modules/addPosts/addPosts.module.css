@@ -1,44 +1,53 @@
-.container{
-    width: 100%;
+.sections {
+    display:grid;
+    width: 85%;
+    margin: 20px auto;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr;
+    grid-gap: 40px;
+    border: 1px solid whitesmoke;
+    border-radius: 30px;
+    padding: 50px;
+    min-height: 600px;
+    height: auto;
+    max-height: 700px;
 }
 
-.form {
+.leftSection,.rightSection{
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    max-width: 100%;
-    min-width: 600px;
-    margin: 0 auto;
+    gap: 20px;
+    height: fit-content;
 }
 
-.formGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.photoGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.input, .textarea {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.title{
+    height: 80px;
     outline: none;
+    color: white;
+    padding-left: 40px;
+    font-size: 20px;
+    border: 1px solid whitesmoke;
+    &::placeholder{
+        color: whitesmoke;
+        opacity: 40%;
+    }
 }
 
-.addButton, .submitButton {
+.textarea{
+    max-height: 1200px;
+}
+
+.submitButton{
     padding: 10px 20px;
     border: none;
     background-color: #4CAF50;
     color: white;
     border-radius: 4px;
     cursor: pointer;
+    &:hover{
+        background-color: #45a049;
+    }
 }
 
-.addButton:hover, .submitButton:hover {
-    background-color: #45a049;
-}
+
+

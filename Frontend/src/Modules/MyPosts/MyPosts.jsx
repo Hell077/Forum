@@ -37,14 +37,13 @@ function MyPosts() {
                                 <Link to={`/post/${post._id}`} className={style.postLink}>
                                     <h2>{post.title}</h2>
                                 </Link>
-                                <p>{post.content}</p>
+                                <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
                             </li>
                         ))}
                     </ul>
                 )}
             </div>
         </>
-
     );
 }
 
