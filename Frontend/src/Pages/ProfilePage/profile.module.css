@@ -7,7 +7,7 @@
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-    width: 120px;
+    width: fit-content;
 
 }
 
@@ -42,4 +42,16 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
+}
+
+
+@media screen and (max-width: 320px) {
+ .switchBtnContainer{
+     flex-direction: column;
+ }
+
+    .switchBtn, .Leave{
+        width: 130px;
+    }
+
 }

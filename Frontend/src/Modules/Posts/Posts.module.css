@@ -1,5 +1,4 @@
 .Posts {
-    border: 1px solid whitesmoke;
     min-height: 1500px;
     height: auto;
     width: 100%;
@@ -15,8 +14,9 @@
     cursor: pointer;
     transition: box-shadow 0.3s ease;
     display: flex;
-    flex-direction: column; /* Добавлено для вертикального расположения элементов внутри .Post */
-    justify-content: space-between; /* Добавлено для равномерного распределения между элементами */
+    border-radius: 15px;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .Post:hover {
@@ -60,4 +60,12 @@
 }
 
 
+@media screen and (max-width: 768px) {
+    .Posts{
+        border: none;
+    }
 
+    .Post{
+        border-radius: 15px;
+    }
+}

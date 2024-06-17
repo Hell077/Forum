@@ -22,9 +22,11 @@ function PostDetail() {
         return <div>Загрузка...</div>;
     }
 
+    const MemoizedHeader = React.memo(Header);
+
     return (
         <>
-            <Header/>
+            <MemoizedHeader />
             <div className={style.PostDetail}>
                 <h1>{post.title}</h1>
                 <div dangerouslySetInnerHTML={{__html: post.content}}/>

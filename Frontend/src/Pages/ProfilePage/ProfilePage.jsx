@@ -34,8 +34,8 @@ function ProfilePage() {
                 <MemoizedToastContainer/>
                 <MemoizedHeader/>
                 <div className={style.switchBtnContainer}>
-                    <button onClick={() => setCurrent('addPosts')} className={style.switchBtn}>Add Posts</button>
-                    <button onClick={() => setCurrent('myPosts')} className={style.switchBtn}>My Posts</button>
+                    <button onClick={() => setCurrent('addPosts')} className={style.switchBtn}>Новый пост</button>
+                    <button onClick={() => setCurrent('myPosts')} className={style.switchBtn}>Посты</button>
                     <button onClick={handleSetLogin} className={style.Leave}>Выйти</button>
                 </div>
                 {current === 'addPosts' ? <AddPosts key="addPosts"/> : <MyPosts key="myPosts"/>}

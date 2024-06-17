@@ -26,10 +26,10 @@ function MyPosts() {
         <>
             <h1 className={style.title}>{id}</h1>
             <div className={style.container}>
-                <h1 className={style.title}>My Posts</h1>
+                <h1 className={style.title}>Мои посты</h1>
 
                 {userPosts.length === 0 ? (
-                    <p>No posts found</p>
+                    <p>У вас нет ни одного поста</p>
                 ) : (
                     <ul className={style.postList}>
                         {userPosts.map(post => (
