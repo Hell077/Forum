@@ -32,11 +32,22 @@
 }
 
 .Photo img {
+    margin-top: 20px;
     max-width: 200px;
     max-height: 200px;
     border-radius: 8px;
     margin-bottom: 5px;
+    padding: 25px;
+    border: 1px solid rgba(245, 245, 245, 0.15);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    position: relative;
 }
+
+.Photo img:hover {
+    transform: translateY(-5px);
+}
+
 
 .Photo p {
     text-align: center;

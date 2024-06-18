@@ -1,0 +1,82 @@
+/* aside.module.css */
+.aside {
+    width: 250px;
+    padding: 20px;
+    border-right: 1px solid #555555;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.filterSection {
+    margin-bottom: 20px;
+}
+
+.filterGroup {
+    margin-bottom: 20px;
+}
+
+.filterGroup h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #e0e0e0;
+}
+
+.tagItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    background-color: #555;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.tagItem span {
+    flex-grow: 1;
+}
+
+.removeTagButton {
+    background: none;
+    border: none;
+    color: #f00;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.tagInput {
+    width: 220px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #333333;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+}
+
+.addTagButton {
+    width: 200px;
+    padding: 10px;
+    background-color: #666666;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.addTagButton:hover {
+    background-color: #777777;
+}
+
+.dateInput {
+    width: 200px;
+    padding: 10px;
+    background-color: #333333;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+}

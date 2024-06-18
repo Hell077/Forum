@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import style from './PostDetail.module.css';
+import Loader from '../Loader/Loader.jsx';
 import Header from '../Header/Header.jsx';
 
 function PostDetail() {
@@ -19,7 +20,7 @@ function PostDetail() {
     }, [postId]);
 
     if (!post) {
-        return <div>Загрузка...</div>;
+        return <Loader/>;
     }
 
     const MemoizedHeader = React.memo(Header);

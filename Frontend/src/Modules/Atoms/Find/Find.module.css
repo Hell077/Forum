@@ -1,0 +1,54 @@
+.container {
+    margin: auto;
+    margin-top: 50px;
+    width: 80%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333333;
+    padding: 0 20px;
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.query {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px 0 30px;
+    margin-right: 10px;
+    border: 2px solid #555555;
+    border-radius: 5px;
+    background-color: #444444;
+    color: #ffffff;
+    font-size: 26px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #888888;
+}
+
+button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+button:hover {
+    color: #aaaaaa;
+}
+
+button.clear {
+    margin-right: 10px;
+}
+
+button.find {
+    margin-left: 10px;
+}
