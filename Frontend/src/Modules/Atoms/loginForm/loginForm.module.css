@@ -6,6 +6,7 @@
     height: 80vh;
     background-color: #333333;
     color: whitesmoke;
+    margin-top: 20px;
 }
 
 .switch {
@@ -17,6 +18,8 @@
 }
 
 .switch button {
+    width: auto;
+    overflow: hidden;
     margin: 0;
     padding: 10px 20px;
     border: none;
@@ -68,6 +71,7 @@ form{
 }
 
 .submitButton {
+    overflow: hidden;
     padding: 10px 20px;
     border: none;
     background-color: #28a745;

@@ -12,7 +12,7 @@ import 'react-quill/dist/quill.snow.css';
 
 function AddPosts() {
     const login = useSelector(state => state.login.login);
-    const [postData, setPostData] = useState({
+    const initialState = {
         title: "",
         content: "",
         created_at: new Date().toISOString(),
@@ -20,9 +20,10 @@ function AddPosts() {
             id: "",
             name: login,
         },
-        tags: ["",],
+        tags: [""],
         photos: [],
-    });
+    };
+    const [postData, setPostData] = useState(initialState);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -55,7 +56,7 @@ function AddPosts() {
             ...postData,
             tags: [
                 ...postData.tags,
-                "", // добавляем пустой тег
+                "",
             ],
         });
     };
@@ -82,6 +83,7 @@ function AddPosts() {
                     url: "",
                     description: "",
                     uploaded_at: new Date().toISOString(),
+                    tag: ""
                 },
             ],
         });
@@ -122,19 +124,7 @@ function AddPosts() {
             });
             console.log('Post created:', response.data);
             setLoading(false);
-            setPostData({
-                title: "Заголовок поста",
-                content: "",
-                created_at: new Date().toISOString(),
-                author: {
-                    id: "",
-                    name: login,
-                },
-                tags: ["тег1", "тег2", "тег3"],
-                photos: [],
-            });
-
-            // Вызываем уведомление об успешном добавлении поста
+            setPostData(initialState);
             toast.success('Пост успешно добавлен!', {
                 position: "top-right",
                 autoClose: 3000,
@@ -145,7 +135,7 @@ function AddPosts() {
                 progress: undefined,
             });
         } catch (error) {
-            console.error('Error creating post:', error);
+            console.error('Ошибка при создании поста:', error);
             setError(error.message);
             setLoading(false);
         }

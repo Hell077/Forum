@@ -38,6 +38,7 @@
 }
 
 .submitButton{
+    width: 250px;
     padding: 10px 20px;
     border: none;
     background-color: #4CAF50;
